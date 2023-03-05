@@ -1,7 +1,7 @@
-import { lazy, Suspense } from 'react';
+// import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Loader from 'shared/components/Loader/Loader';
+// import Loader from 'shared/components/Loader/Loader';
 import { Layout } from './components/Layout/Layout';
 
 import css from './App.module.css';
