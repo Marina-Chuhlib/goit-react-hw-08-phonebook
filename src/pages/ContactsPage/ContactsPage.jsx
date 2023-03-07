@@ -1,8 +1,9 @@
-import { PhoneBook } from "components/PhoneBook/PhoneBook"
-export const ContactsPage = () => {
+import { PhoneBook } from "modules/PhoneBook/PhoneBook"
+ const ContactsPage = () => {
 
     return (
        <PhoneBook/>
     )
     
-}
+ }
+export default ContactsPage

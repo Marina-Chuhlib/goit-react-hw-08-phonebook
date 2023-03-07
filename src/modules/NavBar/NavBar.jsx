@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import UserAuth from './UserAuth/UserAuth';
+
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,20 +16,41 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
+import css from './NavBar.module.css';
 
-import css from './Navigation.module.css';
 import { Home } from '@mui/icons-material';
 
-// const pages = ['Register', 'Login', 'Phone Book'];
-const pages = ['Register'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-export const Navigation = () => {
+const NavBar = () => {
   return (
-    <>
-      <AppBar position="static">
+    <nav>
+      <NavLink to="/">Home</NavLink>
+      <br />
+
+      <UserAuth />
+    
+
+      {/* <nav className={css.text}>
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="register">Register</NavLink>
+
+          </li>
+          <li>
+            <NavLink to="login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="contacts">Phone Book</NavLink>
+          </li>
+        </ul>
+        </nav> */}
+
+      {/* 
+      <AppBar position="static" component="header">
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters component="nav">
             <Home sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             <Typography
               variant="h6"
@@ -35,9 +58,9 @@ export const Navigation = () => {
               component="a"
               href="/goit-react-hw-08-phonebook"
               sx={{
-                mr: 2,
+                mr: 10,
                 display: { xs: 'none', md: 'flex' },
-              fontFamily: 'roboto',
+                fontFamily: 'roboto',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
                 color: 'inherit',
@@ -57,14 +80,13 @@ export const Navigation = () => {
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'roboto',
                 fontWeight: 400,
-                letterSpacing: '.3rem',
+                letterSpacing: '.1rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
               Register
             </Typography>
-
 
             <Typography
               variant="h6"
@@ -74,16 +96,15 @@ export const Navigation = () => {
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
-              fontFamily: 'roboto',
+                fontFamily: 'roboto',
                 fontWeight: 400,
-                letterSpacing: '.3rem',
+                letterSpacing: '.1rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-          Login
+              Login
             </Typography>
-
 
             <Typography
               variant="h6"
@@ -93,36 +114,20 @@ export const Navigation = () => {
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
-              fontFamily: 'roboto',
+                fontFamily: 'roboto',
                 fontWeight: 400,
-                letterSpacing: '.3rem',
+                letterSpacing: '.1rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-             Contacts
+              Contacts
             </Typography>
           </Toolbar>
         </Container>
-      </AppBar>
-
-      {/*   
-        <nav className={css.text}>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="register">Register</NavLink>
-          </li>
-          <li>
-            <NavLink to="login">Login</NavLink>
-          </li>
-          <li>
-            <NavLink to="contacts">Phone Book</NavLink>
-          </li>
-        </ul>
-        </nav> */}
-    </>
+      </AppBar> */}
+    </nav>
   );
 };
+
+export default NavBar;

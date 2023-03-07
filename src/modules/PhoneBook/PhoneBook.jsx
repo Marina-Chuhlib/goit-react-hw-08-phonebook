@@ -5,9 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 import Loader from 'shared/components/Loader/Loader';
-import ContactForm from 'components/ContactForm/ContactForm';
-import ContactsList from 'components/ContactsList/ContactsList';
-import Filter from 'components/Filter/Filter';
+import ContactForm from 'modules/PhoneBook/ContactForm/ContactForm';
+import ContactsList from 'modules/PhoneBook/ContactsList/ContactsList';
+import Filter from 'modules/PhoneBook/Filter/Filter';
 
 import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 
