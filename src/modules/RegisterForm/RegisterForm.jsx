@@ -2,10 +2,9 @@ import * as React from 'react';
 
 import useForm from 'shared/hooks/useForm';
 
-// import HowToRegIcon from '@mui/icons-material/HowToReg';
-// import { styled } from '@mui/material/styles';
-// import { Button } from '@mui/material';
-// import { blue } from '@mui/material/colors';
+import {Btn} from 'shared/components/Button/Buttons';
+
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 import TextField from 'shared/components/TextField/TextField';
 
@@ -14,22 +13,13 @@ import fields from './fields';
 
 import css from './RegisterForm.module.css';
 
-// const ColorButton = styled(Button)(({ theme }) => ({
-//   color: theme.palette.getContrastText(blue[200]),
-//   backgroundColor: blue[200],
-//   //   color:blueGrey[200],
-//   '&:hover': {
-//     backgroundColor: blue[500],
-//   },
-// }));
-
 const RegisterForm = ({ onSubmit }) => {
   const { state, handleChange, handleSubmit } = useForm({
     initialState,
     onSubmit,
   });
-  
-  console.log(state, "RegisterForm")
+
+  console.log(state, 'RegisterForm');
 
   const { name, email, password } = state;
 
@@ -49,18 +39,11 @@ const RegisterForm = ({ onSubmit }) => {
           handleChange={handleChange}
           {...fields.password}
         />
-        <button type="submit">Register</button>
-        
-        {/* <ColorButton endIcon={<HowToRegIcon />} variant="contained">
-        Register
-      </ColorButton> */}
-        {/* <Button endIcon={<HowToRegIcon />} variant="contained" >
-        Register
-      </Button> */}
+
+        <Btn endIcon={<HowToRegIcon />} >Register</Btn>
       </form>
     </>
   );
 };
 
 export default RegisterForm;
-
