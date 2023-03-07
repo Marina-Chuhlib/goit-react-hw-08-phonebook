@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Button } from '@mui/material';
+import { Btn } from 'shared/components/Button/Buttons';
+import LoginIcon from '@mui/icons-material/Login';
 
 import TextField from 'shared/components/TextField/TextField';
 
@@ -41,7 +42,7 @@ const [state, setState] = useState({ ...initialState });
           handleChange={handleSearch}
           {...fields.password}
         />
-        <Button type="submit" className={css.button}>Login</Button>
+        <Btn type="submit" endIcon={<LoginIcon />}>Login</Btn>
       </form>
     </>
   );

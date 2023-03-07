@@ -1,13 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+
+import css from "./UserAuth.module.css"
 
 const UserAuth = () => {
   return (
-    <>
-         <NavLink to="register">Register</NavLink> / 
-          <NavLink to="login">Login</NavLink> 
-          
-    </>
+    <div className={css.wrapper}>
+      <NavLink to="register" className={css.link}>Register</NavLink> /
+      <NavLink to="login" className={css.link}>Login</NavLink>
+    </div>
   );
 };
 
-export default UserAuth
+export default UserAuth;
