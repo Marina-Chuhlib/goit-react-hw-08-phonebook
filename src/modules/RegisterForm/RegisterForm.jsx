@@ -50,6 +50,7 @@ const RegisterForm = ({ onSubmit }) => {
           {...fields.password}
         />
         <button type="submit">Register</button>
+        
         {/* <ColorButton endIcon={<HowToRegIcon />} variant="contained">
         Register
       </ColorButton> */}
