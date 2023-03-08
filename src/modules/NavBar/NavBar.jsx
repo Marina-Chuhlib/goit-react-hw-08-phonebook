@@ -7,10 +7,10 @@ import { Home } from '@mui/icons-material';
 
 const NavBar = () => {
   return (
-    <AppBar position="static" component="header">
+    <AppBar position="static" component="header" sx={{ background: '#3D76DA' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters component="nav">
-          <Home sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Home sx={{ display: { md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -18,7 +18,7 @@ const NavBar = () => {
             href="/goit-react-hw-08-phonebook"
             sx={{
               mr: 12,
-              display: { xs: 'none', md: 'flex' },
+              display: { md: 'flex' },
               fontFamily: 'roboto',
               fontWeight: 700,
               letterSpacing: '.3rem',

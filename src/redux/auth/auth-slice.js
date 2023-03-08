@@ -4,7 +4,7 @@ import { signup } from './auth-operations';
 
 const initialState = {
   user: {},
-  token: null,
+  token: '',
   isLogin: false,
   isLoading: false,
   error: null,

@@ -1,12 +1,17 @@
 import { NavLink } from 'react-router-dom';
 
-import css from "./UserAuth.module.css"
+import css from './UserAuth.module.css';
 
 const UserAuth = () => {
   return (
     <div className={css.wrapper}>
-      <NavLink to="register" className={css.link}>Register</NavLink> /
-      <NavLink to="login" className={css.link}>Login</NavLink>
+      <NavLink to="register" className={css.link}>
+        Register
+      </NavLink>
+      /
+      <NavLink to="login" className={css.link}>
+        Login
+      </NavLink>
     </div>
   );
 };
