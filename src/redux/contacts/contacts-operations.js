@@ -52,6 +52,7 @@ export const fetchDeleteContact = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       await api.deleteContact(id);
+      console.log(id);
       return id;
     } catch ({ response }) {
       toast.error(` Sorry,${response.data}`);

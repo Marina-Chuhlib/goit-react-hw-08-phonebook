@@ -1,11 +1,19 @@
 import UserAuth from './UserAuth/UserAuth';
 
+import { useSelector } from 'react-redux';
+import { isUserLogin } from 'redux/auth/auth-selectors';
+
 import * as React from 'react';
 import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 
 import { Home } from '@mui/icons-material';
 
+import UserMenu from './UserMenu/UserMenu';
+
 const NavBar = () => {
+  const isLogin = useSelector(isUserLogin);
+  console.log(isLogin)
+
   return (
     <AppBar position="static" component="header" sx={{ background: '#3D76DA' }}>
       <Container maxWidth="xl">
@@ -29,7 +37,10 @@ const NavBar = () => {
             Home
           </Typography>
 
-          <UserAuth />
+
+
+          {!isLogin && <UserAuth />}
+          {isLogin && <UserMenu />}
         </Toolbar>
       </Container>
     </AppBar>

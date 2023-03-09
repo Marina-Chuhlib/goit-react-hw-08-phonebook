@@ -1,13 +1,14 @@
 .title {
-  display: flex;
-  flex-direction: column;
+  display: block;
   margin-bottom: 20px;
   margin-left: 20px;
   font-weight: 500;
-  max-width: 200px;
 }
 
 .input {
+  display: block;
+  align-items: center;
+  width: 200px;
   margin-top: 4px;
   padding: 4px;
   font-size: 14px;

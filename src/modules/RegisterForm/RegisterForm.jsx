@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 
 import useForm from 'shared/hooks/useForm';
 
@@ -18,8 +19,6 @@ const RegisterForm = ({ onSubmit }) => {
     initialState,
     onSubmit,
   });
-
-  console.log(state, 'RegisterForm');
 
   const { name, email, password } = state;
 

@@ -23,7 +23,7 @@ const [state, setState] = useState({ ...initialState });
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({email, password});
+    onSubmit({...state});
     setState({ ...initialState });
   };
   const {email, password } = state;

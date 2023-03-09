@@ -5,6 +5,7 @@ const fields = {
     required: true,
     label: 'Name:',
     placeholder: 'User name',
+    pattern: "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
   },
   email: {
     type: 'email',
