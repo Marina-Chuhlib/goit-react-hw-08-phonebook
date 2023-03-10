@@ -9,6 +9,7 @@ import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 import { Home } from '@mui/icons-material';
 
 import UserMenu from './UserMenu/UserMenu';
+import { PhoneBook } from 'modules/PhoneBook/PhoneBook';
 
 const NavBar = () => {
   const isLogin = useSelector(isUserLogin);
@@ -38,10 +39,30 @@ const NavBar = () => {
             Home
           </Typography>
 
+          {isLogin &&
+            <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/goit-react-hw-08-phonebook/contacts"
+            sx={{
+              mr: 12,
+              display: { md: 'flex' },
+              fontFamily: 'roboto',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            Contacts
+          </Typography>}
+
 
 
           {!isLogin && <UserAuth />}
           {isLogin && <UserMenu />}
+
         </Toolbar>
       </Container>
     </AppBar>

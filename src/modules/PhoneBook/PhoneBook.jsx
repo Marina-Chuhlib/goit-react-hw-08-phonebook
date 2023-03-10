@@ -10,6 +10,8 @@ import Filter from 'modules/PhoneBook/Filter/Filter';
 
 import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 
+import css from './PhoneBook.module.css';
+
 export const PhoneBook = () => {
   const isContacts = Boolean(useSelector(getFilteredContacts).length);
   const isLoading = useSelector(state => state.contacts.isLoading);
@@ -19,16 +21,16 @@ export const PhoneBook = () => {
       <h2>Phonebook</h2>
       <ContactForm />
 
-      <h2>Contacts</h2>
+      <h2 className={css.title}>Contacts</h2>
       <Filter />
       {isLoading && <Loader />}
 
       {isContacts && <ContactsList />}
 
-      {!isContacts && !isLoading && <p>No contacts in list</p>}
+      {!isContacts && !isLoading && (
+        <p className={css.text}>No contacts in list</p>
+      )}
       <ToastContainer autoClose={1500} position="top-center" />
     </>
   );
 };
-
-// className={css.text}

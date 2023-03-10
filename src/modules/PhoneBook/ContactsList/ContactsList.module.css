@@ -5,12 +5,11 @@ p {
 
 .list {
   padding: 0;
-  margin-left: 20%;
+  margin-left: 20px;
 }
 
 .item {
-  display: grid;
-  grid-template-columns: 2fr 0.5fr;
+  display: flex;
   padding: 5px;
   width: fit-content;
   font-size: 18px;

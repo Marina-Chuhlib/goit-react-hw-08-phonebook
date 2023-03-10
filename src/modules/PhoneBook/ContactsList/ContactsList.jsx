@@ -20,7 +20,7 @@ const ContactsList = () => {
   const elements = filteredContacts.map(({ id, name, number }) => (
     <li key={id} className={css.item}>
       <p className={css.contact}>
-        {name}: <span className={css.number}>{number}</span>{' '}
+        {name}: <span className={css.number}>{number}</span>
       </p>
       <button
         type="button"
