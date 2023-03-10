@@ -35,7 +35,6 @@ const ContactForm = () => {
   const { name, number } = state;
 
   return (
-    <div className={css.wrapper}>
       <form className={css.form} onSubmit={handleAddContact}>
         <label className={css.title}>
           Name
@@ -69,7 +68,6 @@ const ContactForm = () => {
           Add contact
         </button>
       </form>
-    </div>
   );
 };
 

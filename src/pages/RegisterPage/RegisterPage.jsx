@@ -9,15 +9,15 @@ import { isUserLogin } from 'redux/auth/auth-selectors';
 const RegisterPage = () => {
   const dispatch = useDispatch();
 
-   const isLogin = useSelector(isUserLogin)
+  //  const isLogin = useSelector(isUserLogin)
 
   const handleSignup = data => {
     dispatch(signup(data));
   };
 
-  if (isLogin) {
- return <Navigate to="/contacts"/>
-  }
+//   if (isLogin) {
+//  return <Navigate to="/contacts"/>
+//   }
 
   return (
     <>

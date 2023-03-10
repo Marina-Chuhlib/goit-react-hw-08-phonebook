@@ -9,15 +9,15 @@ import LoginForm from 'modules/LoginForm/LoginForm';
 const LoginPage = () => {
   const dispatch = useDispatch();
 
-  const isLogin = useSelector(isUserLogin);
+  // const isLogin = useSelector(isUserLogin);
 
   const handleLogin = data => {
     dispatch(login(data));
   };
 
-  if (isLogin) {
-    return <Navigate to="/contacts" />;
-  }
+  // if (isLogin) {
+  //   return <Navigate to="/contacts" />;
+  // }
 
   return (
     <>

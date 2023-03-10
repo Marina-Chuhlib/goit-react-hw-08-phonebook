@@ -1,26 +1,29 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { current } from 'redux/auth/auth-operations';
+import { getUser, isUserLogin } from 'redux/auth/auth-selectors';
 
 import Loader from 'shared/components/Loader/Loader';
-
 import NavBar from './modules/NavBar/NavBar';
-import PrivateRoute from './modules/PrivateRoute/PrivateRoute';
+
 import css from './App.module.css';
 
 const Layout = lazy(() => import('./modules/Layout/Layout'));
+const PublicRoute = lazy(() => import('modules/PublicRoute/PublicRoute'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
-// const PrivateRoute = lazy(() => import('./modules/PrivateRoute/PrivateRoute'));
-
-
+const PrivateRoute = lazy(() => import('./modules/PrivateRoute/PrivateRoute'));
 
 const App = () => {
+  const isLoading = useSelector(isUserLogin);
+  console.log(isLoading, 'app');
+  const isLogin = useSelector(getUser);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,15 +32,14 @@ const App = () => {
 
   return (
     <div className={css.wrapper}>
-
-      <BrowserRouter basename="/goit-react-hw-08-phonebook">
+      {/* {<BrowserRouter basename="/goit-react-hw-08-phonebook">
         <NavBar />
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
 
-              <Route element={<PrivateRoute/>}>
+              <Route element={<PrivateRoute />}>
                 <Route path="/contacts" element={<ContactsPage />} />
               </Route>
 
@@ -46,7 +48,28 @@ const App = () => {
             </Route>
           </Routes>
         </Suspense>
-        </BrowserRouter>
+      </BrowserRouter>} */}
+
+      <BrowserRouter basename="/goit-react-hw-08-phonebook">
+        <NavBar />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+
+              <Route element={<PublicRoute />}>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+              </Route>
+
+              <Route element={<PrivateRoute />}>
+                <Route path="/contacts" element={<ContactsPage />} />
+              </Route>
+            </Route>
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </div>
   );
 };

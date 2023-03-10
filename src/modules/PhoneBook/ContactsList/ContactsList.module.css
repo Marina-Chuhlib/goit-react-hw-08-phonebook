@@ -4,15 +4,17 @@ p {
 }
 
 .list {
-  margin: 30px;
   padding: 0;
+  margin-left: 20%;
 }
 
 .item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
   padding: 5px;
   width: fit-content;
   font-size: 18px;
+  text-transform: capitalize;
 }
 
 .contact {

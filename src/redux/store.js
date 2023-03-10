@@ -9,7 +9,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-import { rootReducer } from './root-reducer';
+import rootReducer from './root-reducer';
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -21,4 +21,4 @@ export const store = configureStore({
     }),
 });
 
-export const persistor = persistStore(store);
+export let persistor = persistStore(store);

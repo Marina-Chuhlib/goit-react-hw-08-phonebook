@@ -12,7 +12,8 @@ import UserMenu from './UserMenu/UserMenu';
 
 const NavBar = () => {
   const isLogin = useSelector(isUserLogin);
-  console.log(isLogin)
+  console.log(isLogin, "isLogin NAV BAR" )
+
 
   return (
     <AppBar position="static" component="header" sx={{ background: '#3D76DA' }}>
