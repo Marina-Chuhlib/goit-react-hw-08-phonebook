@@ -1,15 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getUser } from 'redux/auth/auth-selectors';
-import css from './UserMenu.module.css';
-import { logout } from 'redux/auth/auth-operations';
-import { Btn } from 'shared/components/Button/Buttons';
-import LogoutIcon from '@mui/icons-material/Logout';;
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import LogoutIcon from '@mui/icons-material/Logout';
 
+import { getUser } from 'redux/auth/auth-selectors';
+
+import { logout } from 'redux/auth/auth-operations';
+
+import css from './UserMenu.module.css';
 
 const UserMenu = () => {
   const { email, name } = useSelector(getUser);
-  console.log(email, '=> User Menu email');
 
   const dispatch = useDispatch();
 
@@ -19,12 +21,24 @@ const UserMenu = () => {
 
   return (
     <div className={css.wrapper}>
-      <p className={css.name}>{name}</p>
-      <p>{email}</p>
-      <button type="button" onClick={onLogout} className={css.button} >
+      <div>
+        <p className={css.name}>{name}</p>
+        <p>{email}</p>
+      </div>
+      <Button
+        variant="contained"
+        size="small"
+        type="button"
+        onClick={onLogout}
+        endIcon={<LogoutIcon />}
+        sx={{
+          ml: 2,
+          mt: 1,
+          mb: 1,
+        }}
+      >
         Logout
-      </button>
-      {/* <Btn type="button" onClick={onLogout} endIcon={<LogoutIcon />}>Logout</Btn> */}
+      </Button>
     </div>
   );
 };

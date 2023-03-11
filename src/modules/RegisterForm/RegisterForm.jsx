@@ -1,10 +1,9 @@
 import * as React from 'react';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 import useForm from 'shared/hooks/useForm';
 
-import {Btn} from 'shared/components/Button/Buttons';
-
-import HowToRegIcon from '@mui/icons-material/HowToReg';
+import { Btn } from 'shared/components/Button/Buttons';
 
 import TextField from 'shared/components/TextField/TextField';
 
@@ -38,7 +37,7 @@ const RegisterForm = ({ onSubmit }) => {
           {...fields.password}
         />
 
-        <Btn endIcon={<HowToRegIcon />} >Register</Btn>
+        <Btn endIcon={<HowToRegIcon />}>Register</Btn>
       </form>
     </>
   );

@@ -9,10 +9,10 @@ import TextField from 'shared/components/TextField/TextField';
 import initialState from './initialState';
 import fields from './fields';
 
-import css from "./LoginForm.module.css"
+import css from './LoginForm.module.css';
 
 const LoginForm = ({ onSubmit }) => {
-const [state, setState] = useState({ ...initialState });
+  const [state, setState] = useState({ ...initialState });
 
   const handleSearch = e => {
     const { name, value } = e.target;
@@ -23,14 +23,13 @@ const [state, setState] = useState({ ...initialState });
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({...state});
+    onSubmit({ ...state });
     setState({ ...initialState });
   };
-  const {email, password } = state;
+  const { email, password } = state;
 
- return (
+  return (
     <>
-
       <form onSubmit={handleSubmit} className={css.form}>
         <TextField
           value={email}
@@ -42,12 +41,12 @@ const [state, setState] = useState({ ...initialState });
           handleChange={handleSearch}
           {...fields.password}
         />
-        <Btn type="submit" endIcon={<LoginIcon />}>Login</Btn>
+        <Btn type="submit" endIcon={<LoginIcon />}>
+          Login
+        </Btn>
       </form>
     </>
   );
-
-
 };
 
 export default LoginForm;

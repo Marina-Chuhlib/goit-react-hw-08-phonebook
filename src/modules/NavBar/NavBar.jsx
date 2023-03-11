@@ -1,20 +1,16 @@
+import * as React from 'react';
+import { AppBar, Container, Toolbar, Typography } from '@mui/material';
+import { Home } from '@mui/icons-material';
+
 import UserAuth from './UserAuth/UserAuth';
 
 import { useSelector } from 'react-redux';
 import { isUserLogin } from 'redux/auth/auth-selectors';
 
-import * as React from 'react';
-import { AppBar, Container, Toolbar, Typography } from '@mui/material';
-
-import { Home } from '@mui/icons-material';
-
 import UserMenu from './UserMenu/UserMenu';
-import { PhoneBook } from 'modules/PhoneBook/PhoneBook';
 
 const NavBar = () => {
   const isLogin = useSelector(isUserLogin);
-  console.log(isLogin, "isLogin NAV BAR" )
-
 
   return (
     <AppBar position="static" component="header" sx={{ background: '#3D76DA' }}>
@@ -39,30 +35,28 @@ const NavBar = () => {
             Home
           </Typography>
 
-          {isLogin &&
+          {isLogin && (
             <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/goit-react-hw-08-phonebook/contacts"
-            sx={{
-              mr: 12,
-              display: { md: 'flex' },
-              fontFamily: 'roboto',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Contacts
-          </Typography>}
-
-
+              variant="h6"
+              noWrap
+              component="a"
+              href="/goit-react-hw-08-phonebook/contacts"
+              sx={{
+                mr: 12,
+                display: { md: 'flex' },
+                fontFamily: 'roboto',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Contacts
+            </Typography>
+          )}
 
           {!isLogin && <UserAuth />}
           {isLogin && <UserMenu />}
-
         </Toolbar>
       </Container>
     </AppBar>

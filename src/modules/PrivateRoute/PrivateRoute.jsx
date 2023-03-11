@@ -1,12 +1,18 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { isUserLogin } from 'redux/auth/auth-selectors';
+import { getAuth } from 'redux/auth/auth-selectors';
+
+import Loader from 'shared/components/Loader/Loader';
 
 const PrivateRoute = () => {
-  const isLogin = useSelector(isUserLogin);
+  const { isLogin, token } = useSelector(getAuth);
 
-  if (!isLogin) {
+  if (!isLogin && token) {
+    return <Loader />;
+  }
+
+  if (!isLogin && !token) {
     return <Navigate to="/login" />;
   }
 
@@ -14,19 +20,3 @@ const PrivateRoute = () => {
 };
 
 export default PrivateRoute;
-
-// <Typography
-//   component="a"
-//   href="/goit-react-hw-08-phonebook/contacts"
-//   sx={{
-//     m: 'auto',
-//     // display: { md: 'flex' },
-//     fontFamily: 'roboto',
-//     fontWeight: 700,
-//     letterSpacing: '.1rem',
-//     color: 'inherit',
-//     textDecoration: 'none',
-//   }}
-// >
-//   Contacts
-// </Typography>

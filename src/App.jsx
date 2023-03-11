@@ -1,10 +1,9 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { current } from 'redux/auth/auth-operations';
-import { getUser, isUserLogin } from 'redux/auth/auth-selectors';
 
 import Loader from 'shared/components/Loader/Loader';
 import NavBar from './modules/NavBar/NavBar';
@@ -20,10 +19,6 @@ const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const PrivateRoute = lazy(() => import('./modules/PrivateRoute/PrivateRoute'));
 
 const App = () => {
-  const isLoading = useSelector(isUserLogin);
-  console.log(isLoading, 'app');
-  const isLogin = useSelector(getUser);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,24 +27,6 @@ const App = () => {
 
   return (
     <div className={css.wrapper}>
-      {/* {<BrowserRouter basename="/goit-react-hw-08-phonebook">
-        <NavBar />
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<HomePage />} />
-
-              <Route element={<PrivateRoute />}>
-                <Route path="/contacts" element={<ContactsPage />} />
-              </Route>
-
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>} */}
-
       <BrowserRouter basename="/goit-react-hw-08-phonebook">
         <NavBar />
         <Suspense fallback={<Loader />}>
