@@ -16,6 +16,7 @@ p {
   width: fit-content;
   font-size: 18px;
   text-transform: capitalize;
+  font-family: 'Roboto';
 }
 
 .contact {
@@ -39,6 +40,7 @@ p {
   text-transform: uppercase;
   font-weight: 600;
   color: rgb(58, 57, 57);
+  font-family: 'Roboto';
 }
 
 .button:hover {

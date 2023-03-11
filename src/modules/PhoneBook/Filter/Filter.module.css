@@ -3,6 +3,7 @@
   text-align: center;
   margin-bottom: 20px;
   font-weight: 500;
+  font-family: 'Roboto';
 }
 
 .input {
@@ -17,6 +18,7 @@
   border: 1px solid rgb(58, 57, 57);
   border-radius: 5px;
   background-color: inherit;
+  font-family: 'Roboto';
 }
 .input:hover {
   border: 1px solid rgb(58, 57, 57);
