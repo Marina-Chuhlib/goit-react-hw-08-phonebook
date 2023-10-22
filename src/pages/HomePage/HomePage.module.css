@@ -1,0 +1,23 @@
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.title {
+  color: #1f54af;
+  font-family: Roboto;
+  font-size: 43px;
+}
+
+.link {
+  color: #1f54af;
+  font-size: 18px;
+  font-family: Roboto;
+}
+.link:hover {
+  font-size: 20px;
+}

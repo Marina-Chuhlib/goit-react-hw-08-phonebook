@@ -1,11 +1,10 @@
+import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import * as React from 'react';
 import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import { getUser } from 'redux/auth/auth-selectors';
-
 import { logout } from 'redux/auth/auth-operations';
 
 import css from './UserMenu.module.css';
