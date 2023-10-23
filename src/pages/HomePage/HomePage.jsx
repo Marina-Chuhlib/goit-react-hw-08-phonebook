@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <div className={css.container}>
-      {isLogin && token && <p>Home page 🏠</p>}
+      {isLogin && token && <h2 className={css.title}>Phone Book</h2>}
 
       {!isLogin && !token && (
         <>
