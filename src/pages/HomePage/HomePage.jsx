@@ -17,11 +17,11 @@ const HomePage = () => {
 
   return (
     <div className={css.container}>
-      {isLogin && token && <h2 className={css.title}>Phone Book</h2>}
+      {isLogin && token && <h2 className={css.title}>Digital Phone List</h2>}
 
       {!isLogin && !token && (
         <>
-          <h2 className={css.title}>Phone Book</h2>
+          <h2 className={css.title}>Digital Phone List</h2>
           <Link to="/login" className={css.link}> I already have an account </Link>
         </>
       )}
